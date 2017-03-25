@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC     
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"    
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">  
+<hibernate-mapping package="com.san.domain">
+	<class name="Employee" table="employee">  
+		<id name="id" type="java.lang.Integer">
+			<generator class="increment"></generator>
+		</id>
+		<property name="name" type="java.lang.String">
+			<column name="name"></column>
+		</property>
+		<property name="email" type="java.lang.String">
+			<column name="email"></column>
+		</property>
+		<property name="hireDate" type="java.util.Date">
+			<column name="hireDate"></column>
+		</property>
+		<property name="salary" type="java.lang.Float">
+			<column name="salary"></column>
+		</property>
+	</class>
+</hibernate-mapping>
