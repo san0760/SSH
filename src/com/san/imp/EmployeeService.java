@@ -47,4 +47,18 @@ public class EmployeeService implements EmployeeServiceInter
 
 	}
 
+	@Override
+	public Employee checkEmployee(Employee e)
+	{
+		// TODO Auto-generated method stub
+		String hql="from Employee where id=? and password=? ";
+		List<Employee> l=sessionFactory.getCurrentSession().createQuery(hql).setString(0, e.getId()+"").
+		setString(1, e.getPassword()).list();
+		if(l.size()==1){
+			return l.get(0);
+		}else{
+			return null;
+		}
+	}
+	
 }

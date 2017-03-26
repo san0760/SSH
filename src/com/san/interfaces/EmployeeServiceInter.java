@@ -11,4 +11,5 @@ public interface EmployeeServiceInter
 	public List<Employee> showEmployee();
 	public void updEmplpyee(Employee employee);
 	public void delEmployee(Serializable id);
+	public Employee checkEmployee(Employee e);
 }

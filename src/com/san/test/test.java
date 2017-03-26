@@ -41,7 +41,7 @@ public class test
 //			}
 			ApplicationContext ac=new ClassPathXmlApplicationContext("applicationContext.xml");
 			EmployeeServiceInter esi=(EmployeeServiceInter) ac.getBean("employeeService");
-			Employee e=new Employee("aaa","aaa@126.com",new Date(),300.11f);
+			Employee e=new Employee("1","1","aaa@126.com",new Date(),300.11f);
 			esi.addEmployee(e);
 	}
 

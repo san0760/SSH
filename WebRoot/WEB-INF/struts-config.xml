@@ -9,7 +9,7 @@
 	<action-mappings>
 		<action path="/login" parameter="flag" name="employeeForm" type="com.san.web.action.LoginAction">
 			<forward name="ok" path="/WEB-INF/mainFrame.jsp"></forward>
-			<forward name="err" path="login.jsp"></forward>
+			<forward name="err" path="/WEB-INF/login.jsp"></forward>
 		</action>
 	</action-mappings>
 </struts-config>

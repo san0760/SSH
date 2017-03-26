@@ -13,6 +13,15 @@ public class Employee
 	public Employee(){
 		
 	}
+	public Employee(String name, String password, String email,
+			Date hireDate, float salary)
+	{
+		this.name = name;
+		this.password = password;
+		this.email = email;
+		this.hireDate = hireDate;
+		this.salary = salary;
+	}
 	public Employee(String name, String email, Date hireDate,float salary)
 	{
 		this.name = name;
