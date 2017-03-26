@@ -19,5 +19,8 @@
 		<property name="salary" type="java.lang.Float">
 			<column name="salary"></column>
 		</property>
+		<property name="password" type="java.lang.String">
+			<column name="password"></column>
+		</property>
 	</class>
 </hibernate-mapping>

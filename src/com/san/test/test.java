@@ -12,6 +12,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.san.domain.Employee;
+import com.san.interfaces.EmployeeServiceInter;
 
 public class test
 {
@@ -39,12 +40,9 @@ public class test
 //				e.printStackTrace();
 //			}
 			ApplicationContext ac=new ClassPathXmlApplicationContext("applicationContext.xml");
-			SessionFactory sf=(SessionFactory) ac.getBean("sessionFactory");
-			Session s=sf.openSession();
-			Employee e=new Employee("bb","bb@126.com",new Date(),200.11f);
-			Transaction ts=s.beginTransaction();
-			s.save(e);
-			ts.commit();
+			EmployeeServiceInter esi=(EmployeeServiceInter) ac.getBean("employeeService");
+			Employee e=new Employee("aaa","aaa@126.com",new Date(),300.11f);
+			esi.addEmployee(e);
 	}
 
 }

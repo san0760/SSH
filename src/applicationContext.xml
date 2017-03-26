@@ -43,4 +43,12 @@ xsi:schemaLocation="
 		</value>
 	</property>
 </bean>
+<!-- 配置事务管理器 -->
+<bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+	<property name="sessionFactory" ref="sessionFactory"></property>
+</bean>
+<tx:annotation-driven transaction-manager="txManager"/>
+<bean id="employeeService" class="com.san.imp.EmployeeService">
+	<property name="sessionFactory" ref="sessionFactory"></property>
+</bean>
 </beans>
