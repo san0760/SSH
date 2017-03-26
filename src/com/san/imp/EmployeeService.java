@@ -48,6 +48,12 @@ public class EmployeeService implements EmployeeServiceInter
 	}
 
 	@Override
+	public void getEmployee(Serializable id)
+	{
+		// TODO Auto-generated method stub
+	}
+
+	@Override
 	public Employee checkEmployee(Employee e)
 	{
 		// TODO Auto-generated method stub

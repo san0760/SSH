@@ -27,8 +27,9 @@ public class LoginAction extends DispatchAction
 	{
 		WebApplicationContext wac=WebApplicationContextUtils.getWebApplicationContext
 				(this.getServlet().getServletContext());
-		ApplicationContext ac=new ClassPathXmlApplicationContext("applicationContext.xml");
-		EmployeeServiceInter es=(EmployeeServiceInter) ac.getBean("employeeService");
+		EmployeeServiceInter es=(EmployeeServiceInter) wac.getBean("employeeService");
+//		ApplicationContext ac=new ClassPathXmlApplicationContext("applicationContext.xml");
+//		EmployeeServiceInter es=(EmployeeServiceInter) ac.getBean("employeeService");
 		EmployeeForm employeeForm=(EmployeeForm) arg1;
 		Employee e=new Employee();
 		e.setId(Integer.parseInt(employeeForm.getId()));
