@@ -21,13 +21,17 @@ import com.san.web.forms.EmployeeForm;
 
 public class LoginAction extends DispatchAction
 {
-	
+	EmployeeServiceInter es;
+	public void setEs(EmployeeServiceInter es)
+	{
+		this.es = es;
+	}
 	public ActionForward login(ActionMapping arg0, ActionForm arg1,
 			HttpServletRequest arg2, HttpServletResponse arg3) throws Exception
 	{
-		WebApplicationContext wac=WebApplicationContextUtils.getWebApplicationContext
-				(this.getServlet().getServletContext());
-		EmployeeServiceInter es=(EmployeeServiceInter) wac.getBean("employeeService");
+//		WebApplicationContext wac=WebApplicationContextUtils.getWebApplicationContext
+//				(this.getServlet().getServletContext());
+//		EmployeeServiceInter es=(EmployeeServiceInter) wac.getBean("employeeService");
 //		ApplicationContext ac=new ClassPathXmlApplicationContext("applicationContext.xml");
 //		EmployeeServiceInter es=(EmployeeServiceInter) ac.getBean("employeeService");
 		EmployeeForm employeeForm=(EmployeeForm) arg1;

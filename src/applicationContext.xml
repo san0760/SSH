@@ -43,6 +43,9 @@ xsi:schemaLocation="
 		</value>
 	</property>
 </bean>
+<bean name="/login" class="com.san.web.action.LoginAction">
+	<property name="es" ref="employeeService"></property>
+</bean>
 <!-- 配置事务管理器 -->
 <bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
 	<property name="sessionFactory" ref="sessionFactory"></property>

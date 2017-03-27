@@ -12,4 +12,7 @@
 			<forward name="err" path="/WEB-INF/login.jsp"></forward>
 		</action>
 	</action-mappings>
+	<controller>
+		<set-property property="processorClass" value="org.springframework.web.struts.DelegatingRequestProcessor"/>
+	</controller>
 </struts-config>
