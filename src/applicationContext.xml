@@ -33,6 +33,7 @@ xsi:schemaLocation="
 	<property name="mappingResources"><!-- 接管对象映射文件 -->
 		<list>
 			<value>com/san/domain/Employee.hbm.xml</value>
+			<value>com/san/domain/Department.hbm.xml</value>
 		</list>
 	</property>
 	<property name="hibernateProperties"><!-- hibernate参数设置 -->
@@ -43,7 +44,7 @@ xsi:schemaLocation="
 		</value>
 	</property>
 </bean>
-<bean name="/login" class="com.san.web.action.LoginAction">
+<bean name="/login" scope="prototypes" class="com.san.web.action.LoginAction">
 	<property name="es" ref="employeeService"></property>
 </bean>
 <!-- 配置事务管理器 -->
@@ -52,6 +53,9 @@ xsi:schemaLocation="
 </bean>
 <tx:annotation-driven transaction-manager="txManager"/>
 <bean id="employeeService" class="com.san.imp.EmployeeService">
+	<property name="sessionFactory" ref="sessionFactory"></property>
+</bean>
+<bean id="departmentService" class="com.san.imp.DepartmentService">
 	<property name="sessionFactory" ref="sessionFactory"></property>
 </bean>
 </beans>

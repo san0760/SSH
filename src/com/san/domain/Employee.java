@@ -10,6 +10,15 @@ public class Employee
 	private String email;
 	private Date hireDate;
 	private float salary;
+	private Department department;//一个雇员对应一个部门，所以要写部门属性啊
+	public Department getDepartment()
+	{
+		return department;
+	}
+	public void setDepartment(Department department)
+	{
+		this.department = department;
+	}
 	public Employee(){
 		
 	}

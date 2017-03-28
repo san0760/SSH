@@ -4,14 +4,20 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
+import com.san.domain.Department;
 import com.san.domain.Employee;
+import com.san.interfaces.DepartmentServiceInterface;
 import com.san.interfaces.EmployeeServiceInter;
 
 public class test
@@ -40,9 +46,17 @@ public class test
 //				e.printStackTrace();
 //			}
 			ApplicationContext ac=new ClassPathXmlApplicationContext("applicationContext.xml");
-			EmployeeServiceInter esi=(EmployeeServiceInter) ac.getBean("employeeService");
-			Employee e=new Employee("1","1","aaa@126.com",new Date(),300.11f);
-			esi.addEmployee(e);
+			DepartmentServiceInterface dsi=(DepartmentServiceInterface) ac.getBean("departmentService");
+			Employee e=new Employee("san","1","aaa@126.com",new Date(),300.11f);
+			Employee e2=new Employee("san2","1","aaa@126.com",new Date(),300.11f);
+			Employee e3=new Employee("san3","1","aaa@126.com",new Date(),300.11f);
+			Set<Employee> set=new HashSet<Employee>();
+			set.add(e);
+			set.add(e2);
+			set.add(e3);
+			Department d=new Department("Part1");
+			d.setEmps(set);
+			dsi.addDepartment(d);
 	}
 
 }

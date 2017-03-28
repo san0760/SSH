@@ -22,5 +22,6 @@
 		<property name="password" type="java.lang.String">
 			<column name="password"></column>
 		</property>
+		<many-to-one name="department" column="department_id"></many-to-one>
 	</class>
 </hibernate-mapping>

@@ -3,6 +3,7 @@ package com.san.interfaces;
 import java.io.Serializable;
 import java.util.List;
 
+import com.san.domain.Department;
 import com.san.domain.Employee;
 
 public interface EmployeeServiceInter

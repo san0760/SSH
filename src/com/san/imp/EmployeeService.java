@@ -8,6 +8,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.san.domain.Department;
 import com.san.domain.Employee;
 import com.san.interfaces.EmployeeServiceInter;
 @Transactional
@@ -66,5 +67,4 @@ public class EmployeeService implements EmployeeServiceInter
 			return null;
 		}
 	}
-	
 }
