@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'mainFrame.jsp' starting page</title>
+    <title>My JSP 'addEmployee.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -23,8 +23,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    用户：${loginUser.name}&nbsp&nbsp&nbsp所属部门： ${loginUser.department.name}<br>
-   <a href="/SSH/jumpPage.do?flag=jumpToAddEmployee">添加用户</a> <br>
-   <a>显示用户</a>
-  </body>
+   <form action="/SSH/addEmployee.do" method="post">
+   		username:<input type="text" name="name"/><br>
+    	password:<input type="password" name="password"/><br>
+    	Email:<input type="text" name="email"/><br>
+    	salary:<input type="text" name="salary"/><br>
+    	Department:<input type="text" name="department_id"/><br>
+    		<input type="submit" value="s">
+   	</form>
+  	</body>
 </html>

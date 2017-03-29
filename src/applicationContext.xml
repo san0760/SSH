@@ -44,7 +44,10 @@ xsi:schemaLocation="
 		</value>
 	</property>
 </bean>
-<bean name="/login" scope="prototypes" class="com.san.web.action.LoginAction">
+<bean name="/login" scope="prototype" class="com.san.web.action.LoginAction">
+	<property name="es" ref="employeeService"></property>
+</bean>
+<bean name="/addEmployee" scope="prototype" class="com.san.web.action.addEmployeeAction">
 	<property name="es" ref="employeeService"></property>
 </bean>
 <!-- 配置事务管理器 -->

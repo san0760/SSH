@@ -5,11 +5,18 @@
 <struts-config>
 	<form-beans>
 		<form-bean name="employeeForm" type="com.san.web.forms.EmployeeForm"></form-bean>
+		<form-bean name="addEmployeeForm" type="com.san.web.forms.addEmployeeForm"></form-bean>
 	</form-beans>
 	<action-mappings>
 		<action path="/login" parameter="flag" name="employeeForm" type="com.san.web.action.LoginAction">
 			<forward name="ok" path="/WEB-INF/mainFrame.jsp"></forward>
 			<forward name="err" path="/WEB-INF/login.jsp"></forward>
+		</action>
+		<action path="/addEmployee" parameter="flag" name="addEmployeeForm" type="com.san.web.action.addEmployeeAction">
+			<forward name="ok" path="/WEB-INF/mainFrame.jsp"></forward>
+		</action>
+		<action path="/jumpPage" parameter="flag" type="com.san.web.action.jumpPageAction">
+			<forward name="ok" path="/WEB-INF/addEmployee.jsp"></forward>
 		</action>
 	</action-mappings>
 	<controller>
