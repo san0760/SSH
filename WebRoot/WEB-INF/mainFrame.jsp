@@ -25,6 +25,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
     用户：${loginUser.name}&nbsp&nbsp&nbsp所属部门： ${loginUser.department.name}<br>
    <a href="/SSH/jumpPage.do?flag=jumpToAddEmployee">添加用户</a> <br>
-   <a>显示用户</a>
+   <a href="/SSH/jumpPage.do?flag=jumpToShowEmployee">显示用户</a>
   </body>
 </html>

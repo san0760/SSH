@@ -17,6 +17,7 @@
 		</action>
 		<action path="/jumpPage" parameter="flag" type="com.san.web.action.jumpPageAction">
 			<forward name="ok" path="/WEB-INF/addEmployee.jsp"></forward>
+			<forward name="jumpToShowEmployee" path="/WEB-INF/showEmployee.jsp"></forward>
 		</action>
 	</action-mappings>
 	<controller>
